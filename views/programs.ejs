@@ -1,0 +1,25 @@
+<% include partials/header %>
+
+<div class = "container">
+    <header class = "jumbotron">
+        <div class = "container">
+            <h1>All Programs</h1>
+            <p>View all programs we have.</p>
+            <p>
+                <a class = "btn btn-primary btn-md" href = "/programs/new">Add New Program</a>
+            </p>
+        </div>
+    </header>
+    
+    <div class = "row">
+        <% programs.forEach(function(programs){ %>
+            <div class = "col-md-12 col-sm-12">
+                <div>
+                   <h5 style="display:inline-block;"><%= programs.title %></h5>
+                   <h5 style="display:inline-block; float: right;">Published Date:<%= programs.date %></h5>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+<% include partials/footer %>
