@@ -2,6 +2,7 @@ var express = require("express");
 var app = express();
 var bodyParser = require("body-parser");
 
+
 // tell express to use these settings and tools
 app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine", "ejs");
@@ -39,6 +40,7 @@ app.post("/programs", function(req, res){
 
 // 创建新的文章页面
 app.get("/programs/new", function(req, res) {
+    
     res.render("new");
 });
 
