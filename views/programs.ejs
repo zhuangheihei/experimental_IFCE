@@ -1,22 +1,33 @@
 <% include partials/header %>
 
+
+<div class="blog-header">
+    <div class="container">
+        <h1 class="blog-title">Programs</h1>
+        
+    </div>
+</div>
+<hr>
+
+
 <div class = "container">
-    <header class = "jumbotron">
-        <div class = "container">
-            <h1>All Programs</h1>
-            <p>View all programs we have.</p>
-            <p>
-                <a class = "btn btn-primary btn-md" href = "/programs/new">Add New Program</a>
-            </p>
-        </div>
-    </header>
+    <!--<header class = "jumbotron">-->
+    <!--    <div class = "container">-->
+    <!--        <h1>All Programs</h1>-->
+    <!--        <p>View all programs we have.</p>-->
+            <!--<p>-->
+            <!--    <a class = "btn btn-primary btn-md" href = "/programs/new">Add New Program</a>-->
+            <!--</p>-->
+    <!--    </div>-->
+    <!--</header>-->
+    
     
     <div class = "row">
         <% programs.forEach(function(programs){ %>
             <div class = "col-md-12 col-sm-12">
                 <div>
-                   <h5 style="display:inline-block;"><%= programs.title %></h5>
-                   <h5 style="display:inline-block; float: right;">Published Date:<%= programs.date %></h5>
+                   <h6 style="display:inline-block;"><%= programs.title %></h6>
+                   <h6 style="display:inline-block; float: right;">Published Date:<%= programs.date %></h6>
                 </div>
             </div>
         <% }); %>

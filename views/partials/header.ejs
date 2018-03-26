@@ -1,81 +1,80 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>IFCE</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    </head>
-    <body>
+      <title>IFCE</title>
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
     <!--BEGINNING OF NAVBAR-->
-    <div>
-      <nav class="navbar navbar-default navbar-static-top">
-        <div class="container">
-          
-          <div class="navbar-header">
-            <!--BEGINING OF TOGGLE SIGN-->
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar3">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <!--END OF TOGGLE SIGN-->
-            <a class="navbar-left" href = "/" id = "logo">
-              <img src="https://lh3.googleusercontent.com/ErTfG82HQiy0eGX3pIysCCj-s5Tt_lNie1DOyD-XHCpbt6e-LRLqNN5cVXkhYYuXyKJrwYwvVB-D3I-Sn4lpWj_-FExSmTFXCP9uop0GKBcGv3cRFoR6c4t1xXo08nPA4bJZ1iHAKQQNIL0uLAJlPxnAhx9s_tAiXZS4K1rT9oYZlYfaySpTiqSNpaCon17tHy_-DX5zkZz1aTv9QsiXyuEJfBJCa26ku7leOjWIg07DIzqQkt7K3mbnyQtMs2sV7inzyz68O1rMmsqT_JkYuKp2uoL75RXTWvrVxRZ88Bnta6nI_cT4L_4z-uI-y-X3chP8BAqOFPx44lhSUuzSN3-4J-ahQQCUBFcwuRpgfVaYUPORt4RMLrRLdbPAcrbcz-U3RWw65rrw3mz8nqvPjvx647boob-GptQWWUUJhgurHlDCANmlj7WN8Tw_BnFVeUMjvsmqCBnj7f8h0q_PUuAZE32ZrxNHsKcbSiATjQ5lQpWYuqMcRPcRNOxlXHM-nkb4vH9qyLckHJqBkvEDmroYSaV3lvIStIG44IUdTLVWM2PrqtnftUzem-uYed-BZkOn7Hdm-kj_QNxPAdvu38PV9CvMnf6PTYAiaQ=w249-h130-no" class="img-responsive" alt="IFCE Logo" />
-            </a>
-          </div>
-          <div id="navbar3" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-right">
-              <!--GO TO HOME PAGE-->
-              <!--<li><a href="/">Home</a></li>-->
-              <!--PROGRAM TOGGLE DROP DOWN-->
-              <li class="dropdown">
-                <a href="/programs" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Programs <span class="caret"></span></a>
-                <ul class="dropdown-menu" role="menu">
-                  <li><a href="/programs">View All Programs</a></li>
-                  <li><a href="/programs/policyadvocacy">Policy Advocacy</a></li>
-                  <li><a href="/programs/techexchanges">Technologies Exchanges</a></li>
-                  <li><a href="/programs/us-chdialogue">US-China Dialogue</a></li>
-                  <li><a href="/programs/education">Education and Capacity Building</a></li>
-                  <li><a href="/programs/specialevents">Special Events</a></li>
-                  <li><a href="/programs/mediacoverage">Media Coverage</a></li>
-                </ul>
-              </li>
-              <li class="dropdown">
-                <a href="#" class = "dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">IFCE Resources <span class="caret"></span></a>
-                <ul class="dropdown-menu" role="menu">
-                  <li><a href="/lowcarbon">Low Carbon Database</a></li>
-                  <li><a href="/expert">Expert Database</a></li>
-                  <li><a href="/research">Research</a></li>
-                </ul>
-              </li>
-              <li class="dropdown">
-                <a href="#" class = "dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">About Us <span class="caret"></span></a>
-                <ul class="dropdown-menu" role="menu">
-                  <li><a href = "/introduction">Introduction</a></li>
-                  <li><a href = "/staff">Staff and Offices</a></li>
-                  <li><a href = "/directors">Board of Directors</a></li>
-                  <li><a href = "/partners">Partners and Supporting Groups</a></li>
-                  <li><a href = "/friends">Friends of IFCE</a></li>
-                  <li><a href = "/committee">Advisory Committee</a></li>
-                </ul>
-              </li>
-              <li><a href="/zh" class="btn">中文</a></li>
-              <!--<li class = "dropdown">-->
-              <!--  <a href="#" class = "dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Language <span class="caret"></span></a>-->
-              <!--  <ul class = "dropdown-menu" role = "menu">-->
-              <!--    <li><a href="/zh">中文</li>-->
-              <!--    <li><a href="/">English</li>-->
-              <!--  </ul>-->
-              <!--</li>-->
-            </ul>
-          </div>
-          <!--/.nav-collapse -->
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand py-0" href="/">
+          <img class = "img-responsive"  id="logo" style="height: 60px; padding: 0 auto; padding-left: 40px;" src="https://lh3.googleusercontent.com/ErTfG82HQiy0eGX3pIysCCj-s5Tt_lNie1DOyD-XHCpbt6e-LRLqNN5cVXkhYYuXyKJrwYwvVB-D3I-Sn4lpWj_-FExSmTFXCP9uop0GKBcGv3cRFoR6c4t1xXo08nPA4bJZ1iHAKQQNIL0uLAJlPxnAhx9s_tAiXZS4K1rT9oYZlYfaySpTiqSNpaCon17tHy_-DX5zkZz1aTv9QsiXyuEJfBJCa26ku7leOjWIg07DIzqQkt7K3mbnyQtMs2sV7inzyz68O1rMmsqT_JkYuKp2uoL75RXTWvrVxRZ88Bnta6nI_cT4L_4z-uI-y-X3chP8BAqOFPx44lhSUuzSN3-4J-ahQQCUBFcwuRpgfVaYUPORt4RMLrRLdbPAcrbcz-U3RWw65rrw3mz8nqvPjvx647boob-GptQWWUUJhgurHlDCANmlj7WN8Tw_BnFVeUMjvsmqCBnj7f8h0q_PUuAZE32ZrxNHsKcbSiATjQ5lQpWYuqMcRPcRNOxlXHM-nkb4vH9qyLckHJqBkvEDmroYSaV3lvIStIG44IUdTLVWM2PrqtnftUzem-uYed-BZkOn7Hdm-kj_QNxPAdvu38PV9CvMnf6PTYAiaQ=w249-h130-no" alt="IFCE Logo" />
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" style="padding-right: 80px;">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Programs
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class = "dropdown-item" href="/programs">View All Programs</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href = "/programs/policyadvocacy">Policy Advocacy</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href = "/programs/techexchanges">Technologies Exchanges</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href = "/programs/us-chdialogue">US-China Dialogue</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href = "/programs/education">Education and Capacity Building</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href = "/programs/specialevents">Special Events</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href = "/programs/mediacoverage">Media Coverage</a>
+              </div>
+            </li>
+            <li class="nav-item active dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                IFCE Resources
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href = "/lowcarbon">Low Carbon Database</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href = "/expert">Expert Database</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href = "/research">Research</a>
+              </div>
+            </li>
+            <li class="nav-item active dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                About Us
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href = "/introduction">Introduction</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href = "/staff">Staff and Offices</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href = "/directors">Board of Directors</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href = "/partners">Partners and Supportors</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href = "/friends">Friends of IFCE</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href = "/committee">Advisory Committee</a>
+              </div>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="zh/">中文</a>
+            </li>
+          </ul>
         </div>
-        <!--/.container-fluid -->
       </nav>
-    </div>
-    <!--END OF NAVBAR-->    
+      <!--END OF NAVBAR-->
+    </header>
     
+    <main style = "padding-bottom:0; margin-bottom: -30px;" id = "spacecontrol">
