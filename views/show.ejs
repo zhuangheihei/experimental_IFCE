@@ -1,4 +1,11 @@
-<h1><%=  program.title  %></h1>
-<p><%=  program.date %></p>
-<hr>
-<p><%= program.body %></p>
+<% include partials/header %>
+
+<div class = "container">
+    <h1><%=  program.title  %></h1>
+    <p><%=  program.date %></p>
+    <hr>
+    <%- program.body %>    
+</div>
+
+
+<% include partials/footer %>

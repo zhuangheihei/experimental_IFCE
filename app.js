@@ -20,24 +20,6 @@ var programSchema = new mongoose.Schema({
 
 var Program = mongoose.model("Program", programSchema);
 
-// Program.create(
-//     {
-//         title: "Another Title",
-//         date: "2018-04-01",
-//         category: "Technology Exchange",
-//         body: "<h1>My First Heading</h1><p>My first paragraph.</p>"
-        
-//     }, function(err, program){
-//         if(err){
-//             console.log(err);
-//         } else {
-//             console.log("NEWLY CREATED PROGRAM: ");
-//             console.log(program);
-//         }
-//     });
-
-
-
 // ------------英文版页面的逻辑由此开始-------------//
 
 app.get("/", function(req, res){
@@ -65,7 +47,6 @@ app.post("/programs", function(req, res){
     var category = req.body.category;
     var body = req.body.body;
     var newProgram = {title: title, date: date, category: category, body:body};
-    console.log(newProgram);
     // Create a new program and save to DB
     Program.create(newProgram, function(err, newlyCreated){
         if(err){
@@ -80,11 +61,10 @@ app.post("/programs", function(req, res){
 
 // NEW - show form to create new program
 app.get("/programs/new", function(req, res) {
-    
     res.render("new");
 });
 
-
+// Show details of each program
 // This route should behind any /programs/adf route
 app.get("/programs/:id", function(req, res) {
     //find the program with provided ID
