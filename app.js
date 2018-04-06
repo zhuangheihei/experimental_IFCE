@@ -1,11 +1,41 @@
-var express = require("express");
-var app = express();
-var bodyParser = require("body-parser");
+var express = require("express"),
+    app = express(),
+    bodyParser = require("body-parser"),
+    mongoose = require("mongoose");
 
+mongoose.connect("mongodb://localhost/experiment");
 
 // tell express to use these settings and tools
 app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine", "ejs");
+
+
+//SCHEMA SET UP
+var programSchema = new mongoose.Schema({
+    title: String,
+    date: Date,
+    category: String,
+    body: String
+});
+
+var Program = mongoose.model("Program", programSchema);
+
+// Program.create(
+//     {
+//         title: "Another Title",
+//         date: "2018-04-01",
+//         category: "Technology Exchange",
+//         body: "<h1>My First Heading</h1><p>My first paragraph.</p>"
+        
+//     }, function(err, program){
+//         if(err){
+//             console.log(err);
+//         } else {
+//             console.log("NEWLY CREATED PROGRAM: ");
+//             console.log(program);
+//         }
+//     });
+
 
 
 // ------------英文版页面的逻辑由此开始-------------//
@@ -14,35 +44,59 @@ app.get("/", function(req, res){
     res.render("index");
 });
 
-// 移到这里以备存储测试，等待被移动到database
-var programs = [
-        {title: "air pollution air pollution air pollution", date:"1023-1-12", body:"hello"},   
-        {title: "air pollution air pollution air pollution", date:"1024-1-12", body:"hello"},   
-        {title: "air pollution air pollution air pollution", date:"1035-1-56", body:"hello"},   
-        {title: "air pollution air pollution air pollution", date:"1067-3-13", body:"hello"}   
-];
-
-// 显示的program只是链接，也就是文字
+// INDEX Route - show all programs
 app.get("/programs", function(req, res){
-    res.render("programs", {programs:programs});
+    // GET ALL PROGRAMS FROM DB
+    Program.find({}, function(err, allPrograms){
+        if(err){
+            console.log(err);
+        } else {
+            res.render("programs", {programs:allPrograms});
+        }
+    });
 });
 
+
+// CREATE - add new program to DB
 app.post("/programs", function(req, res){
     //将data从form传输到database
     var title = req.body.title;
     var date = req.body.date;
+    var category = req.body.category;
     var body = req.body.body;
-    var newProgram = {title: title, date: date, body:body};
-    programs.push(newProgram);
-    //redirect到programs页面然后显示新发布的东西
-    res.redirect("/programs");
+    var newProgram = {title: title, date: date, category: category, body:body};
+    console.log(newProgram);
+    // Create a new program and save to DB
+    Program.create(newProgram, function(err, newlyCreated){
+        if(err){
+            console.log(err);
+        } else {
+            //redirect到programs page
+            // console.log(newlyCreated);
+            res.redirect("/programs");      
+        }
+    })
 });
 
-// 创建新的文章页面
+// NEW - show form to create new program
 app.get("/programs/new", function(req, res) {
     
     res.render("new");
 });
+
+
+// This route should behind any /programs/adf route
+app.get("/programs/:id", function(req, res) {
+    //find the program with provided ID
+    Program.findById(req.params.id, function(err, foundProgram){
+       if(err){
+           console.log(err);
+       } else{
+            //render show template with that program
+           res.render("show", {program:foundProgram});
+       }
+    });
+})
 
 // 各种页面的render
 app.get("/programs/policyadvocacy", function(req, res) {
