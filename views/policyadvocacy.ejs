@@ -1,5 +1,26 @@
 <% include partials/header %>
 
-<h1>Policy Advocacy</h1>
+<div class="blog-header">
+    <div class="container">
+        <h1 class="blog-title">Policy Advocacy</h1>
+    </div>
+</div>
+<hr>
+
+
+<div class = "container">
+    <div class = "row">
+        <% programs.forEach(function(program){ %>
+            <div class = "col-md-12 col-sm-12">
+                <div>
+                    <a href="/programs/<%= program._id %>" style = "display:inline-block;"><%= program.title %></a>
+                   <!--<h6 style="display:inline-block;"><%= program.title %></h6>-->
+                   <h6 style="display:inline-block; float: right;">Published Date:<%= program.date %></h6>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
 
 <% include partials/footer %>

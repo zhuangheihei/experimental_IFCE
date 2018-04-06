@@ -1,6 +1,7 @@
 var express = require("express"),
     app = express(),
     bodyParser = require("body-parser"),
+    Program = require("./models/program"),
     mongoose = require("mongoose");
 
 mongoose.connect("mongodb://localhost/experiment");
@@ -10,15 +11,6 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine", "ejs");
 
 
-//SCHEMA SET UP
-var programSchema = new mongoose.Schema({
-    title: String,
-    date: Date,
-    category: String,
-    body: String
-});
-
-var Program = mongoose.model("Program", programSchema);
 
 // ------------英文版页面的逻辑由此开始-------------//
 
@@ -39,72 +31,75 @@ app.get("/programs", function(req, res){
 });
 
 
-// CREATE - add new program to DB
-app.post("/programs", function(req, res){
-    //将data从form传输到database
-    var title = req.body.title;
-    var date = req.body.date;
-    var category = req.body.category;
-    var body = req.body.body;
-    var newProgram = {title: title, date: date, category: category, body:body};
-    // Create a new program and save to DB
-    Program.create(newProgram, function(err, newlyCreated){
+// 各种页面的render
+app.get("/programs/policyadvocacy", function(req, res) {
+    // GET ALL PROGRAMS FROM DB
+    Program.find({category:"Policy Advocacy"}, function(err, allPrograms){
         if(err){
             console.log(err);
         } else {
-            //redirect到programs page
-            // console.log(newlyCreated);
-            res.redirect("/programs");      
+            res.render("policyadvocacy", {programs:allPrograms});
         }
-    })
-});
-
-// NEW - show form to create new program
-app.get("/programs/new", function(req, res) {
-    res.render("new");
-});
-
-// Show details of each program
-// This route should behind any /programs/adf route
-app.get("/programs/:id", function(req, res) {
-    //find the program with provided ID
-    Program.findById(req.params.id, function(err, foundProgram){
-       if(err){
-           console.log(err);
-       } else{
-            //render show template with that program
-           res.render("show", {program:foundProgram});
-       }
     });
-})
-
-// 各种页面的render
-app.get("/programs/policyadvocacy", function(req, res) {
-    res.render("policyadvocacy");
 });
 
 app.get("/programs/techexchanges", function(req, res) {
-    res.render("techexchanges");
+    // GET ALL PROGRAMS FROM DB
+    Program.find({category:"Technology Exchanges"}, function(err, allPrograms){
+        if(err){
+            console.log(err);
+        } else {
+            res.render("techexchanges", {programs:allPrograms});
+        }
+    });
 });
 
 
 app.get("/programs/us-chdialogue", function(req, res) {
-    res.render("us-chdialogue");
+    // GET ALL PROGRAMS FROM DB
+    Program.find({category:"US-China Dialogue"}, function(err, allPrograms){
+        if(err){
+            console.log(err);
+        } else {
+            res.render("us-chdialogue", {programs:allPrograms});
+        }
+    });
 });
 
 
 app.get("/programs/education", function(req, res) {
-    res.render("education");
+    // GET ALL PROGRAMS FROM DB
+    Program.find({category:"Education and Capacity Building"}, function(err, allPrograms){
+        if(err){
+            console.log(err);
+        } else {
+            res.render("education", {programs:allPrograms});
+        }
+    });
 });
 
 
 app.get("/programs/specialevents", function(req, res) {
-    res.render("specialevents");
+    // GET ALL PROGRAMS FROM DB
+    Program.find({category:"Special Events"}, function(err, allPrograms){
+        if(err){
+            console.log(err);
+        } else {
+            res.render("specialevents", {programs:allPrograms});
+        }
+    });
 });
 
 
 app.get("/programs/mediacoverage", function(req, res) {
-    res.render("mediacoverage");
+    // GET ALL PROGRAMS FROM DB
+    Program.find({category:"Media Coverage"}, function(err, allPrograms){
+        if(err){
+            console.log(err);
+        } else {
+            res.render("mediacoverage", {programs:allPrograms});
+        }
+    });
 });
 
 
@@ -149,6 +144,48 @@ app.get("/committee", function(req, res) {
     res.render("committee");
 });
 
+// CREATE - add new program to DB
+app.post("/programs", function(req, res){
+    //将data从form传输到database
+    var title = req.body.title;
+    var date = req.body.date;
+    var category = req.body.category;
+    var body = req.body.body;
+    var newProgram = {title: title, date: date, category: category, body:body};
+    // Create a new program and save to DB
+    Program.create(newProgram, function(err, newlyCreated){
+        if(err){
+            console.log(err);
+        } else {
+            //redirect到programs page
+            res.redirect("/programs");      
+        }
+    })
+});
+
+
+
+
+// NEW - show form to create new program
+app.get("/programs/new", function(req, res) {
+    res.render("new");
+});
+
+// Show details of each program
+// This route should behind any /programs/adf route
+app.get("/programs/:id", function(req, res) {
+    //find the program with provided ID
+    Program.findById(req.params.id, function(err, foundProgram){
+       if(err){
+           console.log(err);
+       } else{
+            //render show template with that program
+           res.render("show", {program:foundProgram});
+       }
+    });
+})
+
+// Admin page, you can manage all contents.
 
 
 //-------------中文版页面的逻辑由此开始-------------//

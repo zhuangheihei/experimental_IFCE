@@ -9,3 +9,7 @@
         {text:"awesome"}
     ]
 }
+
+- Add admin page
+- Add user authentication
+- Add home page thumbnail
