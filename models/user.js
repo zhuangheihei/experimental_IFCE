@@ -9,5 +9,4 @@ var UserSchema = new mongoose.Schema({
 // Add bunch of methods into user schema
 UserSchema.plugin(passportLocalMongoose);
 
-var User = mongoose.model("User", UserSchema);
-module.exports = User;
+module.exports = mongoose.model("User", UserSchema);;

@@ -25,6 +25,7 @@ app.use(passport.session());
 app.use(bodyParser.urlencoded({extended:true}));
 
 // encode and decode user information 
+passport.use(new localStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
@@ -161,10 +162,7 @@ app.get("/committee", function(req, res) {
     res.render("committee");
 });
 
-// Admin page
-app.get("/admin", function(req, res) {
-    res.render("admin");
-});
+
 
 // CREATE - add new program to DB
 app.post("/programs", function(req, res){
@@ -207,33 +205,60 @@ app.get("/programs/:id", function(req, res) {
 
 
 // Admin page, you can manage all contents.
-app.get("/admin", function(req, res) {
+app.get("/admin", isLoggedIn, function(req, res) {
     res.render("admin");
 });
 
-/* It is a one time use 
-// Register page, you can sign up for new admin user
-app.get("/secretregister", function(req, res) {
-    res.render("register"); 
+// Login route
+// render login form
+app.get("/login", function(req, res) {
+    if(req.isAuthenticated()){
+        res.render("admin");
+    } else{
+        res.render("login");    
+    }
 });
 
-// Handling administrator signs up
-app.post("/secretregister", function(req, res){
-    req.body.username
-    req.body.password
-    // pass the user object that we want to create, and hash password with user name
-    User.register(new User({username:req.body.username}), req.body.password, function(err, user){
-        if(err){
-            console.log(err);
-            return res.render("register");
-        }
-        passport.authenticate("local")(req,res,function(){
-            res.redirect("/admin");
-        });
-    });
+// Login logic
+// passport.authenticate 在这里被称为middleware, 因为它在第一个输入参数和最后一个callback function之间起作用。
+// 它处在beginning of route 与 end of route(callback function)之间
+app.post("/login", passport.authenticate("local", 
+    {
+        successRedirect: "/admin",
+        failureRedirect: "/login"
+    }), function(req, res){
 });
 
-*/
+// Logout logic
+app.get("/logout", function(req, res) {
+    req.logout();
+    res.redirect("/programs");
+});
+
+
+// 一次性注册route
+// // Register page, you can sign up for new admin user
+// app.get("/secretregister", function(req, res) {
+//     res.render("register"); 
+// });
+
+// // Handling administrator signs up
+// app.post("/secretregister", function(req, res){
+//     req.body.username
+//     req.body.password
+//     // pass the user object that we want to create, and hash password with user name
+//     User.register(new User({username:req.body.username}), req.body.password, function(err, user){
+//         if(err){
+//             console.log(err);
+//             return res.render("register");
+//         }
+//         passport.authenticate("local")(req,res,function(){
+//             res.redirect("/admin");
+//         });
+//     });
+// });
+
+
 
 // ===============中文版页面的逻辑由此开始===============//
 
@@ -245,6 +270,14 @@ app.get("/zh", function(req, res){
 
 
 
+
+// MIDDLEWARE
+function isLoggedIn(req, res, next){
+    if(req.isAuthenticated()){
+        return next();
+    }
+    res.redirect("/login");
+}
 
 
 // 表示这个东西跑起来了！
