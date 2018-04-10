@@ -1,8 +1,13 @@
 #article-container{
     padding-top: 50px;
+    padding-bottom: 60px;
 }
 
 #article-body{
     padding-left: 50px;
-    padding-right: 100px;
+}
+
+#login-input{
+    width: 40%;
+    
 }
