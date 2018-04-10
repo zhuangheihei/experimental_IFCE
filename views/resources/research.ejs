@@ -1,5 +1,9 @@
 <% include ../partials/header %>
 
 <h1>Research</h1>
+<% if(currentUser) { %>
+    <a href="/research/edit" class="btn btn-md btn-warning">EDIT</a>
+<% } %>
+<h2><%- nonprogram.body %></h2>
 
 <% include ../partials/footer %>
