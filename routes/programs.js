@@ -9,7 +9,7 @@ router.get("/programs", function(req, res){
         if(err){
             console.log(err);
         } else {
-            res.render("programs", {programs:allPrograms});
+            res.render("programs/programs", {programs:allPrograms});
         }
     });
 });
@@ -22,7 +22,7 @@ router.get("/policyadvocacy", function(req, res) {
         if(err){
             console.log(err);
         } else {
-            res.render("policyadvocacy", {programs:allPrograms});
+            res.render("programs/policyadvocacy", {programs:allPrograms});
         }
     });
 });
@@ -33,7 +33,7 @@ router.get("/techexchanges", function(req, res) {
         if(err){
             console.log(err);
         } else {
-            res.render("techexchanges", {programs:allPrograms});
+            res.render("programs/techexchanges", {programs:allPrograms});
         }
     });
 });
@@ -45,7 +45,7 @@ router.get("/us-chdialogue", function(req, res) {
         if(err){
             console.log(err);
         } else {
-            res.render("us-chdialogue", {programs:allPrograms});
+            res.render("programs/us-chdialogue", {programs:allPrograms});
         }
     });
 });
@@ -57,7 +57,7 @@ router.get("/education", function(req, res) {
         if(err){
             console.log(err);
         } else {
-            res.render("education", {programs:allPrograms});
+            res.render("programs/education", {programs:allPrograms});
         }
     });
 });
@@ -69,7 +69,7 @@ router.get("/specialevents", function(req, res) {
         if(err){
             console.log(err);
         } else {
-            res.render("specialevents", {programs:allPrograms});
+            res.render("programs/specialevents", {programs:allPrograms});
         }
     });
 });
@@ -81,51 +81,15 @@ router.get("/mediacoverage", function(req, res) {
         if(err){
             console.log(err);
         } else {
-            res.render("mediacoverage", {programs:allPrograms});
+            res.render("programs/mediacoverage", {programs:allPrograms});
         }
     });
 });
 
 
-router.get("/lowcarbon", function(req, res) {
-    res.render("lowcarbon");
-});
-
-
-router.get("/expert", function(req, res) {
-    res.render("expert");
-});
-
-
-router.get("/research", function(req, res) {
-    res.render("research");
-});
-
-
-router.get("/introduction", function(req, res) {
-    res.render("introduction");
-});
-
-
-router.get("/staff", function(req, res) {
-    res.render("staff");
-});
-
-
-router.get("/directors", function(req, res) {
-    res.render("directors");
-});
-
-router.get("/partners", function(req, res) {
-    res.render("partners");
-});
-
-router.get("/friends", function(req, res) {
-    res.render("friends");
-});
-
-router.get("/committee", function(req, res) {
-    res.render("committee");
+// NEW - show form to create new program
+router.get("/programs/new", isLoggedIn, function(req, res) {
+    res.render("programs/new");
 });
 
 
@@ -144,10 +108,31 @@ router.post("/programs", function(req, res){
             console.log(err);
         } else {
             //redirect到programs page
-            res.redirect("/programs");      
+            res.redirect("programs/programs");      
         }
     })
 });
+
+// Show details of each program
+// This route should behind any /programs/adf route
+router.get("/programs/:id", function(req, res) {
+    //find the program with provided ID
+    Program.findById(req.params.id, function(err, foundProgram){
+       if(err){
+           console.log(err);
+       } else{
+            //render show template with that program
+           res.render("programs/show", {program:foundProgram});
+       }
+    });
+});
+
+
+// EDIT the program
+router.get("/programs/:id/edit", function(req, res) {
+     res.render("programs/edit")
+});
+// UPDATE program route
 
 
 // MIDDLEWARE

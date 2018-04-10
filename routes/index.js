@@ -10,25 +10,6 @@ router.get("/", function(req, res){
 });
 
 
-// NEW - show form to create new program
-router.get("/programs/new", isLoggedIn, function(req, res) {
-    res.render("new");
-});
-
-// Show details of each program
-// This route should behind any /programs/adf route
-router.get("/programs/:id", function(req, res) {
-    //find the program with provided ID
-    Program.findById(req.params.id, function(err, foundProgram){
-       if(err){
-           console.log(err);
-       } else{
-            //render show template with that program
-           res.render("show", {program:foundProgram});
-       }
-    });
-});
-
 
 // Admin page, you can manage all contents.
 router.get("/admin", isLoggedIn, function(req, res) {
@@ -58,7 +39,7 @@ router.post("/login", passport.authenticate("local",
 // Logout logic
 router.get("/logout", function(req, res) {
     req.logout();
-    res.redirect("/programs");
+    res.redirect("/index");
 });
 
 
