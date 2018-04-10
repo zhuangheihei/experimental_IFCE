@@ -108,7 +108,7 @@ router.post("/programs", function(req, res){
             console.log(err);
         } else {
             //redirect到programs page
-            res.redirect("programs/programs");      
+            res.redirect("/programs");      
         }
     })
 });
@@ -130,10 +130,49 @@ router.get("/programs/:id", function(req, res) {
 
 // EDIT the program
 router.get("/programs/:id/edit", function(req, res) {
-     res.render("programs/edit")
+    if(req.isAuthenticated()){
+        Program.findById(req.params.id, function(err, foundProgram){
+            if(err){
+                res.redirect("/programs");
+            } else {
+                res.render("programs/edit", {program: foundProgram});
+            }
+        });
+    } else {
+        res.send("You must log in to do that!");
+    }
 });
-// UPDATE program route
 
+// UPDATE program route
+router.put("/programs/:id", function(req,res){
+    if(req.isAuthenticated()){
+        Program.findByIdAndUpdate(req.params.id, req.body.program,function(err, updatedProgram){
+            if(err){
+                res.redirect("/programs");
+            } else {
+                res.redirect("/programs/"+ req.params.id);
+            }
+        });    
+    } else {
+        res.send("You don't have the permission to do that!");
+    }
+});
+
+
+// DESTROY program route
+router.delete("/programs/:id", function(req, res){
+    if(req.isAuthenticated()){
+        Program.findByIdAndRemove(req.params.id, function(err){
+            if(err){
+                res.redirect("/programs");
+            } else {
+                res.redirect("/programs");
+            }
+        });
+    } else {
+        res.send("You must log in to do that!");
+    }
+});
 
 // MIDDLEWARE
 function isLoggedIn(req, res, next){

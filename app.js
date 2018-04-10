@@ -25,11 +25,17 @@ app.use(require("express-session")({
 // tell express to use these settings and tools
 app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine", "ejs");
+app.use(express.static(__dirname + "/public"));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(methodOverride("_method"));
 
+
+app.use(function(req, res, next){
+   res.locals.currentUser = req.user;
+   next();
+});
 
 // encode and decode user information 
 passport.use(new localStrategy(User.authenticate()));

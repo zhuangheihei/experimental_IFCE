@@ -1,7 +1,5 @@
 var express = require("express");
 var router = express.Router();
-var Program = require("../models/program");
-
 
 
 router.get("/introduction", function(req, res) {
