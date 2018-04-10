@@ -10,6 +10,7 @@
     ]
 }
 
-- Add admin page
-- Add user authentication
+- Add admin page--done
+- Add user authentication--done
 - Add home page thumbnail
+- Add different articles to remained pages.
