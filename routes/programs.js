@@ -110,7 +110,7 @@ router.post("/programs", function(req, res){
             //redirect到programs page
             res.redirect("/programs");      
         }
-    })
+    });
 });
 
 

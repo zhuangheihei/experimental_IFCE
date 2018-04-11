@@ -1,0 +1,36 @@
+<% include ../partials/header %>
+
+<div class = "container">
+    <div class="row">
+        <h2>Edit Expert Page</h2>
+        <div >
+            <form action="/partners?_method=PUT" method = "post">
+                <!--Add Summernote Editor-->
+                <div class = "form-group">
+                   <textarea id="summernote" name="nonprogram[body]"><%= nonprogram.body %></textarea>
+                </div>
+                
+                <div class="form-group text-right" id = "submit">
+                    <button class = "btn btn-lg btn-primary">Submit!</button>
+                </div>
+            </form>
+            <a href = "/programs" style="float:right">
+                <button class = "btn btn-lg btn-secondary">Cancel</button>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!--Script to run summernote-->
+<script>
+    $(document).ready(function() {
+      $('#summernote').summernote({
+            placeholder: "hello!",
+            tabsize: 2,
+            height: 900,
+            width: 1150
+      });
+    });
+</script>
+
+<% include ../partials/footer %>
