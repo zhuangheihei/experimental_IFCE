@@ -23,7 +23,9 @@ app.use(require("express-session")({
 }));
 
 // tell express to use these settings and tools
-app.use(bodyParser.urlencoded({extended:true}));
+// app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.json({limit: '15mb'}));
+app.use(bodyParser.urlencoded({limit: '15mb', extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 app.use(passport.initialize());
