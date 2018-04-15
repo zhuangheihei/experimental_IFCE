@@ -2,6 +2,11 @@
  font-family: Arial;
 }
 
+#spacecontrol{
+    padding-bottom:0; 
+    margin-bottom: -30px;
+}
+
 #article-container{
     padding-top: 50px;
     padding-bottom: 60px;
@@ -15,3 +20,4 @@
     width: 40%;
     
 }
+

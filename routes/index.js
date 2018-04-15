@@ -6,7 +6,13 @@ var passport = require("passport");
 // ===============英文版页面的逻辑由此开始===============//
 
 router.get("/", function(req, res){
-    res.render("index");
+    Program.find().limit(10).sort({ occupation: -1 }).exec(function(err, tenPrograms){
+        if(err){
+            console.log(err);
+        } else {
+            res.render("index", {tenprograms:tenPrograms});
+        }
+    });
 });
 
 
