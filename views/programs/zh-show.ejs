@@ -1,0 +1,27 @@
+<% include ../partials/zh-header %>
+
+<div class = "container" id="article-container">
+    <div class="row">
+        <div col="col-md-3">
+            <div class="list-group">
+                <li class="list-group-item">发布日期：<%=  program.date.toLocaleDateString() %></li>
+                <li class="list-group-item">项目分类：<%=  program.category %></li>
+                <% if(currentUser) {%>
+                    <li class="list-group-item"><a href="/zh/programs/<%= program._id %>/edit" class="btn btn-sm btn-warning"> 编辑 </a></li>
+                    <li class="list-group-item">
+                        <form action="/zh/programs/<%= program._id %>/?_method=DELETE" method="POST" id="del">
+                            <button class="btn btn-sm btn-danger">删除</button>
+                        </form>
+                    </li>
+                <% } %>
+            </div>
+        </div>
+        <div class="col-md-9" id="article-body">
+            <h1 class="text-center"><%=  program.title %></h1>
+            <hr>
+            <%- program.body %>  
+        </div>
+    </div>
+</div>
+
+<% include ../partials/zh-footer %>
