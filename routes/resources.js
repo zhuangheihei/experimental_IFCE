@@ -1,6 +1,40 @@
 var express = require("express");
 var router = express.Router();
 var nonProgram = require("../models/nonprogram");
+var zhnonProgram = require("../models/zh-nonprogram");
+
+ 
+// var zhnewnonProgram = {category:"低碳数据库", body:"低碳数据库页面"};
+// // Create a new program and save to DB
+// zhnonProgram.create(zhnewnonProgram, function(err, newlyCreated){
+//     if(err){
+//         console.log(err);
+//     } else {
+//         console.log(newlyCreated);      
+//     }
+// });
+
+// var zhnewnonProgram = {category:"专家数据库", body:"专家数据库页面"};
+// // Create a new program and save to DB
+// zhnonProgram.create(zhnewnonProgram, function(err, newlyCreated){
+//     if(err){
+//         console.log(err);
+//     } else {
+//         console.log(newlyCreated);      
+//     }
+// });
+
+// var zhnewnonProgram = {category:"国际视角", body:"国际视角页面"};
+// // Create a new program and save to DB
+// zhnonProgram.create(zhnewnonProgram, function(err, newlyCreated){
+//     if(err){
+//         console.log(err);
+//     } else {
+//         console.log(newlyCreated);      
+//     }
+// });
+
+//=============================English Routes================================//
 
 // SHOW show details of lowcarbon page
 router.get("/lowcarbon", function(req, res) {
@@ -127,7 +161,134 @@ router.put("/research", function(req,res){
 });
 
 
-// MIDDLEWARE
+//==================================中文routes==================================//
+
+// SHOW 显示低碳数据库页面
+router.get("/zh/lowcarbon", function(req, res) {
+    zhnonProgram.findOne({category:"低碳数据库"}, function(err, foundNonprogram){
+        if(err){
+            console.log(err);
+        } else {
+            res.render("resources/zh-lowcarbon", {nonprogram:foundNonprogram});
+        }
+    });
+});
+
+// EDIT 低碳数据库页面
+router.get("/zh/lowcarbon/edit", function(req, res) {
+    if(req.isAuthenticated()){
+        zhnonProgram.findOne( {category:"低碳数据库"}, function(err, foundNonprogram){
+            if(err){
+                res.redirect("/zh/lowcarbon");
+            } else {
+                res.render("resources/zh-editlowcarbon", {nonprogram: foundNonprogram});
+            }
+        });
+    } else {
+        res.send("You must log in to do that!");
+    }
+});
+
+// UPDATE 低碳数据库页面
+router.put("/zh/lowcarbon", function(req,res){
+    if(req.isAuthenticated()){
+        zhnonProgram.findOneAndUpdate({category:"低碳数据库"}, req.body.nonprogram,function(err, updatedProgram){
+            if(err){
+                res.redirect("/zh/lowcarbon");
+            } else {
+                res.redirect("/zh/lowcarbon");
+            }
+        });    
+    } else {
+        res.send("You don't have the permission to do that!");
+    }
+});
+
+// SHOW 显示专家数据库
+router.get("/zh/expert", function(req, res) {
+    zhnonProgram.findOne({category:"专家数据库"}, function(err, foundNonprogram){
+        if(err){
+            console.log(err);
+        } else {
+            res.render("resources/zh-expert", {nonprogram:foundNonprogram});
+        }
+    });
+});
+
+// EDIT expert route
+router.get("/zh/expert/edit", function(req, res) {
+    if(req.isAuthenticated()){
+        zhnonProgram.findOne( {category:"专家数据库"}, function(err, foundNonprogram){
+            if(err){
+                res.redirect("/zh/expert");
+            } else {
+                res.render("resources/zh-editexpert", {nonprogram: foundNonprogram});
+            }
+        });
+    } else {
+        res.send("You must log in to do that!");
+    }
+});
+
+// UPDATE expert route
+router.put("/zh/expert", function(req,res){
+    if(req.isAuthenticated()){
+        zhnonProgram.findOneAndUpdate({category:"专家数据库"}, req.body.nonprogram, function(err, updatedProgram){
+            if(err){
+                res.redirect("/zh/expert");
+            } else {
+                res.redirect("/zh/expert");
+            }
+        });    
+    } else {
+        res.send("You don't have the permission to do that!");
+    }
+});
+
+// SHOW show details of research
+router.get("/zh/research", function(req, res) {
+    zhnonProgram.findOne({category:"国际视角"}, function(err, foundNonprogram){
+        if(err){
+            console.log(err);
+        } else {
+            res.render("resources/zh-research", {nonprogram:foundNonprogram});
+        }
+    });
+});
+
+
+// EDIT research
+router.get("/zh/research/edit", function(req, res) {
+    if(req.isAuthenticated()){
+        zhnonProgram.findOne( {category:"国际视角"}, function(err, foundNonprogram){
+            if(err){
+                res.redirect("/zh/research");
+            } else {
+                res.render("resources/zh-editresearch", {nonprogram: foundNonprogram});
+            }
+        });
+    } else {
+        res.send("You must log in to do that!");
+    }
+});
+
+// UPDATE research route
+router.put("/zh/research", function(req,res){
+    if(req.isAuthenticated()){
+        zhnonProgram.findOneAndUpdate({category:"国际视角"}, req.body.nonprogram,function(err, updatedProgram){
+            if(err){
+                res.redirect("/zh/research");
+            } else {
+                res.redirect("/zh/research");
+            }
+        });    
+    } else {
+        res.send("You don't have the permission to do that!");
+    }
+});
+
+
+//============ MIDDLEWARE ============//
 function isLoggedIn(req, res, next){
     if(req.isAuthenticated()){
         return next();

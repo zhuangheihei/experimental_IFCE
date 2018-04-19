@@ -1,7 +1,7 @@
 var express = require("express");
 var router = express.Router();
 var nonProgram = require("../models/nonprogram");
-
+var zhnonProgram = require("../models/zh-nonprogram");
 
 // var category = "Introduction";
 // var body = "This is Introduction";
