@@ -141,7 +141,7 @@ router.get("/programs/:id/edit", function(req, res) {
             }
         });
     } else {
-        res.send("You must log in to do that!");
+        res.redirect("/login");
     }
 });
 
@@ -156,7 +156,7 @@ router.put("/programs/:id", function(req,res){
             }
         });    
     } else {
-        res.send("You don't have the permission to do that!");
+        res.redirect("/login");
     }
 });
 
@@ -172,7 +172,7 @@ router.delete("/programs/:id", function(req, res){
             }
         });
     } else {
-        res.send("You must log in to do that!");
+        res.redirect("/login");
     }
 });
 
@@ -316,7 +316,7 @@ router.get("/zh/programs/:id/edit", function(req, res) {
             }
         });
     } else {
-        res.send("You must log in to do that!");
+        res.redirect("/login");
     }
 });
 
@@ -331,7 +331,7 @@ router.put("/zh/programs/:id", function(req,res){
             }
         });    
     } else {
-        res.send("You don't have the permission to do that!");
+        res.redirect("/login");
     }
 });
 
@@ -347,7 +347,7 @@ router.delete("/zh/programs/:id", function(req, res){
             }
         });
     } else {
-        res.send("You must log in to do that!");
+        res.redirect("/login");
     }
 });
 

@@ -1,0 +1,36 @@
+<% include ../partials/zh-header %>
+
+<div class = "container">
+    <div class="row">
+        <h2>编辑页面</h2>
+        <div >
+            <form action="/zh/partners?_method=PUT" method = "post">
+                <!--Add Summernote Editor-->
+                <div class = "form-group">
+                   <textarea id="summernote" name="nonprogram[body]"><%= nonprogram.body %></textarea>
+                </div>
+                
+                <div class="form-group text-right" id = "submit">
+                    <button class = "btn btn-lg btn-primary">提交</button>
+                </div>
+            </form>
+            <a href = "/zh/partners" style="float:right">
+                <button class = "btn btn-lg btn-secondary">取消</button>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!--Script to run summernote-->
+<script>
+    $(document).ready(function() {
+      $('#summernote').summernote({
+            placeholder: "hello!",
+            tabsize: 2,
+            height: 900,
+            width: 1150
+      });
+    });
+</script>
+
+<% include ../partials/zh-footer %>

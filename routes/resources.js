@@ -58,7 +58,7 @@ router.get("/lowcarbon/edit", function(req, res) {
             }
         });
     } else {
-        res.send("You must log in to do that!");
+        res.redirect("/login");
     }
 });
 
@@ -73,7 +73,7 @@ router.put("/lowcarbon", function(req,res){
             }
         });    
     } else {
-        res.send("You don't have the permission to do that!");
+        res.redirect("/login");
     }
 });
 
@@ -99,7 +99,7 @@ router.get("/expert/edit", function(req, res) {
             }
         });
     } else {
-        res.send("You must log in to do that!");
+        res.redirect("/login");
     }
 });
 
@@ -114,7 +114,7 @@ router.put("/expert", function(req,res){
             }
         });    
     } else {
-        res.send("You don't have the permission to do that!");
+        res.redirect("/login");
     }
 });
 
@@ -141,7 +141,7 @@ router.get("/research/edit", function(req, res) {
             }
         });
     } else {
-        res.send("You must log in to do that!");
+        res.redirect("/login");
     }
 });
 
@@ -156,7 +156,7 @@ router.put("/research", function(req,res){
             }
         });    
     } else {
-        res.send("You don't have the permission to do that!");
+        res.redirect("/login");
     }
 });
 
@@ -185,7 +185,7 @@ router.get("/zh/lowcarbon/edit", function(req, res) {
             }
         });
     } else {
-        res.send("You must log in to do that!");
+        res.redirect("/login");
     }
 });
 
@@ -200,7 +200,7 @@ router.put("/zh/lowcarbon", function(req,res){
             }
         });    
     } else {
-        res.send("You don't have the permission to do that!");
+        res.redirect("/login");
     }
 });
 
@@ -226,7 +226,7 @@ router.get("/zh/expert/edit", function(req, res) {
             }
         });
     } else {
-        res.send("You must log in to do that!");
+        res.redirect("/login");
     }
 });
 
@@ -241,7 +241,7 @@ router.put("/zh/expert", function(req,res){
             }
         });    
     } else {
-        res.send("You don't have the permission to do that!");
+        res.redirect("/login");
     }
 });
 
@@ -268,7 +268,7 @@ router.get("/zh/research/edit", function(req, res) {
             }
         });
     } else {
-        res.send("You must log in to do that!");
+        res.redirect("/login");
     }
 });
 
@@ -283,7 +283,7 @@ router.put("/zh/research", function(req,res){
             }
         });    
     } else {
-        res.send("You don't have the permission to do that!");
+        res.redirect("/login");
     }
 });
 
