@@ -49,27 +49,27 @@ router.get("/logout", function(req, res) {
 });
 
 
-//一次性注册route
-// Register page, you can sign up for new admin user
-router.get("/secretregister", function(req, res) {
-    res.render("register"); 
-});
+// //一次性注册route
+// // Register page, you can sign up for new admin user
+// router.get("/secretregister", function(req, res) {
+//     res.render("register"); 
+// });
 
-// Handling administrator signs up
-router.post("/secretregister", function(req, res){
-    req.body.username
-    req.body.password
-    // pass the user object that we want to create, and hash password with user name
-    User.register(new User({username:req.body.username}), req.body.password, function(err, user){
-        if(err){
-            console.log(err);
-            return res.render("register");
-        }
-        passport.authenticate("local")(req,res,function(){
-            res.redirect("/admin");
-        });
-    });
-});
+// // Handling administrator signs up
+// router.post("/secretregister", function(req, res){
+//     req.body.username
+//     req.body.password
+//     // pass the user object that we want to create, and hash password with user name
+//     User.register(new User({username:req.body.username}), req.body.password, function(err, user){
+//         if(err){
+//             console.log(err);
+//             return res.render("register");
+//         }
+//         passport.authenticate("local")(req,res,function(){
+//             res.redirect("/admin");
+//         });
+//     });
+// });
 
 
 
