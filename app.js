@@ -14,7 +14,8 @@ var programRoute = require("./routes/programs"),
     resourcesRoute = require("./routes/resources"),
     indexRoute   = require("./routes/index");
 
-mongoose.connect("mongodb://localhost/experiment");
+// mongoose.connect("mongodb://localhost/experiment");
+mongoose.connect("mongodb://admin:ifce2018@ds255889.mlab.com:55889/ifceexperiment");
 
 app.use(require("express-session")({
     secret:"This is going to be the admin page of IFCE website!",
