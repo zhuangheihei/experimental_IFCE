@@ -6,18 +6,18 @@ var zhnonProgram = require("../models/zh-nonprogram");
 
 // ================ routes begins ======================//
 
-var category = "Introduction";
-var body = "This is Introduction";
-var newProgram = {category: category, body:body};
-// Create a new program and save to DB
-nonProgram.create(newProgram, function(err, newlyCreated){
-    if(err){
-        console.log(err);
-    } else {
-        //redirect到programs page
-        console.log(newlyCreated);   
-    }
-});
+// var category = "Introduction";
+// var body = "This is Introduction";
+// var newProgram = {category: category, body:body};
+// // Create a new program and save to DB
+// nonProgram.create(newProgram, function(err, newlyCreated){
+//     if(err){
+//         console.log(err);
+//     } else {
+//         //redirect到programs page
+//         console.log(newlyCreated);   
+//     }
+// });
 
 
 // SHOW show details
@@ -60,18 +60,18 @@ router.put("/introduction", function(req,res){
         res.redirect("/login");    }
 });
 
-var category = "IFCE简介";
-var body = "简介页面";
-var newProgram = {category: category, body:body};
-// Create a new program and save to DB
-zhnonProgram.create(newProgram, function(err, newlyCreated){
-    if(err){
-        console.log(err);
-    } else {
-        //redirect到programs page
-        console.log(newlyCreated);   
-    }
-});
+// var category = "IFCE简介";
+// var body = "简介页面";
+// var newProgram = {category: category, body:body};
+// // Create a new program and save to DB
+// zhnonProgram.create(newProgram, function(err, newlyCreated){
+//     if(err){
+//         console.log(err);
+//     } else {
+//         //redirect到programs page
+//         console.log(newlyCreated);   
+//     }
+// });
 
 
 // SHOW show details
@@ -117,18 +117,18 @@ router.put("/zh/introduction", function(req,res){
 
 
 
-var category = "Staff";
-var body = "This is Staff";
-var newProgram = {category: category, body:body};
-// Create a new program and save to DB
-nonProgram.create(newProgram, function(err, newlyCreated){
-    if(err){
-        console.log(err);
-    } else {
-        //redirect到programs page
-        console.log(newlyCreated);   
-    }
-});
+// var category = "Staff";
+// var body = "This is Staff";
+// var newProgram = {category: category, body:body};
+// // Create a new program and save to DB
+// nonProgram.create(newProgram, function(err, newlyCreated){
+//     if(err){
+//         console.log(err);
+//     } else {
+//         //redirect到programs page
+//         console.log(newlyCreated);   
+//     }
+// });
 
 // SHOW show details 
 router.get("/staff", function(req, res) {
@@ -172,18 +172,18 @@ router.put("/staff", function(req,res){
 });
 
 
-var category = "工作人员及办事处";
-var body = "工作人员及办事处页面";
-var newProgram = {category: category, body:body};
-// Create a new program and save to DB
-zhnonProgram.create(newProgram, function(err, newlyCreated){
-    if(err){
-        console.log(err);
-    } else {
-        //redirect到programs page
-        console.log(newlyCreated);   
-    }
-});
+// var category = "工作人员及办事处";
+// var body = "工作人员及办事处页面";
+// var newProgram = {category: category, body:body};
+// // Create a new program and save to DB
+// zhnonProgram.create(newProgram, function(err, newlyCreated){
+//     if(err){
+//         console.log(err);
+//     } else {
+//         //redirect到programs page
+//         console.log(newlyCreated);   
+//     }
+// });
 
 // SHOW show details 
 router.get("/zh/staff", function(req, res) {
@@ -226,18 +226,18 @@ router.put("/zh/staff", function(req,res){
     }
 });
 
-var category = "Directors";
-var body = "This is Directors";
-var newProgram = {category: category, body:body};
-// Create a new program and save to DB
-nonProgram.create(newProgram, function(err, newlyCreated){
-    if(err){
-        console.log(err);
-    } else {
-        //redirect到programs page
-        console.log(newlyCreated);   
-    }
-});
+// var category = "Directors";
+// var body = "This is Directors";
+// var newProgram = {category: category, body:body};
+// // Create a new program and save to DB
+// nonProgram.create(newProgram, function(err, newlyCreated){
+//     if(err){
+//         console.log(err);
+//     } else {
+//         //redirect到programs page
+//         console.log(newlyCreated);   
+//     }
+// });
 
 // SHOW show details 
 router.get("/directors", function(req, res) {
@@ -281,18 +281,18 @@ router.put("/directors", function(req,res){
 });
 
 
-var category = "理事会理事";
-var body = "理事会理事页面";
-var newProgram = {category: category, body:body};
-// Create a new program and save to DB
-zhnonProgram.create(newProgram, function(err, newlyCreated){
-    if(err){
-        console.log(err);
-    } else {
-        //redirect到programs page
-        console.log(newlyCreated);   
-    }
-});
+// var category = "理事会理事";
+// var body = "理事会理事页面";
+// var newProgram = {category: category, body:body};
+// // Create a new program and save to DB
+// zhnonProgram.create(newProgram, function(err, newlyCreated){
+//     if(err){
+//         console.log(err);
+//     } else {
+//         //redirect到programs page
+//         console.log(newlyCreated);   
+//     }
+// });
 
 // SHOW show details 
 router.get("/zh/directors", function(req, res) {
@@ -337,18 +337,18 @@ router.put("/zh/directors", function(req,res){
 
 
 
-var category = "Partners";
-var body = "This is Partners";
-var newProgram = {category: category, body:body};
-// Create a new program and save to DB
-nonProgram.create(newProgram, function(err, newlyCreated){
-    if(err){
-        console.log(err);
-    } else {
-        //redirect到programs page
-        console.log(newlyCreated);   
-    }
-});
+// var category = "Partners";
+// var body = "This is Partners";
+// var newProgram = {category: category, body:body};
+// // Create a new program and save to DB
+// nonProgram.create(newProgram, function(err, newlyCreated){
+//     if(err){
+//         console.log(err);
+//     } else {
+//         //redirect到programs page
+//         console.log(newlyCreated);   
+//     }
+// });
 
 // SHOW show details 
 router.get("/partners", function(req, res) {
@@ -392,18 +392,18 @@ router.put("/partners", function(req,res){
 });
 
 
-var category = "主要合作伙伴";
-var body = "主要合作伙伴页面";
-var newProgram = {category: category, body:body};
-// Create a new program and save to DB
-zhnonProgram.create(newProgram, function(err, newlyCreated){
-    if(err){
-        console.log(err);
-    } else {
-        //redirect到programs page
-        console.log(newlyCreated);   
-    }
-});
+// var category = "主要合作伙伴";
+// var body = "主要合作伙伴页面";
+// var newProgram = {category: category, body:body};
+// // Create a new program and save to DB
+// zhnonProgram.create(newProgram, function(err, newlyCreated){
+//     if(err){
+//         console.log(err);
+//     } else {
+//         //redirect到programs page
+//         console.log(newlyCreated);   
+//     }
+// });
 
 // SHOW show details 
 router.get("/zh/partners", function(req, res) {
@@ -447,18 +447,18 @@ router.put("/zh/partners", function(req,res){
 });
 
 
-var category = "Friends";
-var body = "This is Friends";
-var newProgram = {category: category, body:body};
-// Create a new program and save to DB
-nonProgram.create(newProgram, function(err, newlyCreated){
-    if(err){
-        console.log(err);
-    } else {
-        //redirect到programs page
-        console.log(newlyCreated);   
-    }
-});
+// var category = "Friends";
+// var body = "This is Friends";
+// var newProgram = {category: category, body:body};
+// // Create a new program and save to DB
+// nonProgram.create(newProgram, function(err, newlyCreated){
+//     if(err){
+//         console.log(err);
+//     } else {
+//         //redirect到programs page
+//         console.log(newlyCreated);   
+//     }
+// });
 
 // SHOW show details 
 router.get("/friends", function(req, res) {
@@ -501,18 +501,18 @@ router.put("/friends", function(req,res){
     }
 });
 
-var category = "国际中国环境基金会大事记";
-var body = "国际中国环境基金会大事记";
-var newProgram = {category: category, body:body};
-// Create a new program and save to DB
-zhnonProgram.create(newProgram, function(err, newlyCreated){
-    if(err){
-        console.log(err);
-    } else {
-        //redirect到programs page
-        console.log(newlyCreated);   
-    }
-});
+// var category = "国际中国环境基金会大事记";
+// var body = "国际中国环境基金会大事记";
+// var newProgram = {category: category, body:body};
+// // Create a new program and save to DB
+// zhnonProgram.create(newProgram, function(err, newlyCreated){
+//     if(err){
+//         console.log(err);
+//     } else {
+//         //redirect到programs page
+//         console.log(newlyCreated);   
+//     }
+// });
 
 // SHOW show details 
 router.get("/zh/friends", function(req, res) {
@@ -556,18 +556,18 @@ router.put("/zh/friends", function(req,res){
 });
 
 
-var category = "Committee";
-var body = "This is Committee";
-var newProgram = {category: category, body:body};
-// Create a new program and save to DB
-nonProgram.create(newProgram, function(err, newlyCreated){
-    if(err){
-        console.log(err);
-    } else {
-        //redirect到programs page
-        console.log(newlyCreated);   
-    }
-});
+// var category = "Committee";
+// var body = "This is Committee";
+// var newProgram = {category: category, body:body};
+// // Create a new program and save to DB
+// nonProgram.create(newProgram, function(err, newlyCreated){
+//     if(err){
+//         console.log(err);
+//     } else {
+//         //redirect到programs page
+//         console.log(newlyCreated);   
+//     }
+// });
 
 
 // SHOW show details 
@@ -612,18 +612,18 @@ router.put("/committee", function(req,res){
 });
 
 
-var category = "顾问委员会";
-var body = "顾问委员会页面";
-var newProgram = {category: category, body:body};
-// Create a new program and save to DB
-zhnonProgram.create(newProgram, function(err, newlyCreated){
-    if(err){
-        console.log(err);
-    } else {
-        //redirect到programs page
-        console.log(newlyCreated);   
-    }
-});
+// var category = "顾问委员会";
+// var body = "顾问委员会页面";
+// var newProgram = {category: category, body:body};
+// // Create a new program and save to DB
+// zhnonProgram.create(newProgram, function(err, newlyCreated){
+//     if(err){
+//         console.log(err);
+//     } else {
+//         //redirect到programs page
+//         console.log(newlyCreated);   
+//     }
+// });
 
 
 // SHOW show details 

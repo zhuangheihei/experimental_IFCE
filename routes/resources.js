@@ -4,26 +4,36 @@ var nonProgram = require("../models/nonprogram");
 var zhnonProgram = require("../models/zh-nonprogram");
 
 // Create default nonProgram content in database
-var newnonProgram = {category:"Low Carbon Database", body:"low carbon database"};
-nonProgram.create(newnonProgram, function(err, newlyCreated){
-    if(err){
-        console.log(err);
-    } else {
-        console.log(newlyCreated);      
-    }
-});
+// var newnonProgram = {category:"Low Carbon Database", body:"low carbon database"};
+// nonProgram.create(newnonProgram, function(err, newlyCreated){
+//     if(err){
+//         console.log(err);
+//     } else {
+//         console.log(newlyCreated);      
+//     }
+// });
  
-var newnonProgram = {category:"Expert Database", body:"expert database"};
-nonProgram.create(newnonProgram, function(err, newlyCreated){
-    if(err){
-        console.log(err);
-    } else {
-        console.log(newlyCreated);      
-    }
-});
+// var newnonProgram = {category:"Expert Database", body:"expert database"};
+// nonProgram.create(newnonProgram, function(err, newlyCreated){
+//     if(err){
+//         console.log(err);
+//     } else {
+//         console.log(newlyCreated);      
+//     }
+// });
  
-var newnonProgram = {category:"Research", body:"research database"};
-nonProgram.create(newnonProgram, function(err, newlyCreated){
+// var newnonProgram = {category:"Research", body:"research database"};
+// nonProgram.create(newnonProgram, function(err, newlyCreated){
+//     if(err){
+//         console.log(err);
+//     } else {
+//         console.log(newlyCreated);      
+//     }
+// });
+
+var zhnewnonProgram = {category:"低碳数据库", body:"低碳数据库页面"};
+// Create a new program and save to DB
+zhnonProgram.create(zhnewnonProgram, function(err, newlyCreated){
     if(err){
         console.log(err);
     } else {
@@ -31,35 +41,25 @@ nonProgram.create(newnonProgram, function(err, newlyCreated){
     }
 });
 
-// var zhnewnonProgram = {category:"低碳数据库", body:"低碳数据库页面"};
-// // Create a new program and save to DB
-// zhnonProgram.create(zhnewnonProgram, function(err, newlyCreated){
-//     if(err){
-//         console.log(err);
-//     } else {
-//         console.log(newlyCreated);      
-//     }
-// });
+var zhnewnonProgram = {category:"专家数据库", body:"专家数据库页面"};
+// Create a new program and save to DB
+zhnonProgram.create(zhnewnonProgram, function(err, newlyCreated){
+    if(err){
+        console.log(err);
+    } else {
+        console.log(newlyCreated);      
+    }
+});
 
-// var zhnewnonProgram = {category:"专家数据库", body:"专家数据库页面"};
-// // Create a new program and save to DB
-// zhnonProgram.create(zhnewnonProgram, function(err, newlyCreated){
-//     if(err){
-//         console.log(err);
-//     } else {
-//         console.log(newlyCreated);      
-//     }
-// });
-
-// var zhnewnonProgram = {category:"国际视角", body:"国际视角页面"};
-// // Create a new program and save to DB
-// zhnonProgram.create(zhnewnonProgram, function(err, newlyCreated){
-//     if(err){
-//         console.log(err);
-//     } else {
-//         console.log(newlyCreated);      
-//     }
-// });
+var zhnewnonProgram = {category:"国际视角", body:"国际视角页面"};
+// Create a new program and save to DB
+zhnonProgram.create(zhnewnonProgram, function(err, newlyCreated){
+    if(err){
+        console.log(err);
+    } else {
+        console.log(newlyCreated);      
+    }
+});
 
 //=============================English Routes================================//
 
