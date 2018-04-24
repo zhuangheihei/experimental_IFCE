@@ -31,35 +31,35 @@ var zhnonProgram = require("../models/zh-nonprogram");
 //     }
 // });
 
-var zhnewnonProgram = {category:"低碳数据库", body:"低碳数据库页面"};
-// Create a new program and save to DB
-zhnonProgram.create(zhnewnonProgram, function(err, newlyCreated){
-    if(err){
-        console.log(err);
-    } else {
-        console.log(newlyCreated);      
-    }
-});
+// var zhnewnonProgram = {category:"低碳数据库", body:"低碳数据库页面"};
+// // Create a new program and save to DB
+// zhnonProgram.create(zhnewnonProgram, function(err, newlyCreated){
+//     if(err){
+//         console.log(err);
+//     } else {
+//         console.log(newlyCreated);      
+//     }
+// });
 
-var zhnewnonProgram = {category:"专家数据库", body:"专家数据库页面"};
-// Create a new program and save to DB
-zhnonProgram.create(zhnewnonProgram, function(err, newlyCreated){
-    if(err){
-        console.log(err);
-    } else {
-        console.log(newlyCreated);      
-    }
-});
+// var zhnewnonProgram = {category:"专家数据库", body:"专家数据库页面"};
+// // Create a new program and save to DB
+// zhnonProgram.create(zhnewnonProgram, function(err, newlyCreated){
+//     if(err){
+//         console.log(err);
+//     } else {
+//         console.log(newlyCreated);      
+//     }
+// });
 
-var zhnewnonProgram = {category:"国际视角", body:"国际视角页面"};
-// Create a new program and save to DB
-zhnonProgram.create(zhnewnonProgram, function(err, newlyCreated){
-    if(err){
-        console.log(err);
-    } else {
-        console.log(newlyCreated);      
-    }
-});
+// var zhnewnonProgram = {category:"国际视角", body:"国际视角页面"};
+// // Create a new program and save to DB
+// zhnonProgram.create(zhnewnonProgram, function(err, newlyCreated){
+//     if(err){
+//         console.log(err);
+//     } else {
+//         console.log(newlyCreated);      
+//     }
+// });
 
 //=============================English Routes================================//
 
