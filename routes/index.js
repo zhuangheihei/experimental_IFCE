@@ -6,7 +6,7 @@ var passport = require("passport");
 // ===============英文版页面的逻辑由此开始===============//
 
 router.get("/", function(req, res){
-    Program.find().limit(10).sort({ occupation: -1 }).exec(function(err, tenPrograms){
+    Program.find().limit(10).sort({ date: -1 }).exec(function(err, tenPrograms){
         if(err){
             console.log(err);
         } else {
